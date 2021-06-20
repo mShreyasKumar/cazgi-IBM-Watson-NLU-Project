@@ -76,12 +76,17 @@ class App extends React.Component {
       this.setState({sentimentOutput:<EmotionTable emotions={response.data}/>});
   });
   }
+
+  componentDidMount() {
+      document.title = "Sentiment Analyzer"
+  }
   
 
   render() {
     return (  
       <div className="App">
-      <button className="btn btn-info" onClick={this.renderTextArea}>Text</button>
+        <title style={{"display": "block"}}>Sentiment Analyzer</title>
+        <button className="btn btn-info" onClick={this.renderTextArea}>Text</button>
         <button className="btn btn-dark"  onClick={this.renderTextBox}>URL</button>
         <br/><br/>
         {this.state.innercomp}
